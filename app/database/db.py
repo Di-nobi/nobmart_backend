@@ -48,3 +48,9 @@ class Database:
         if not products:
             return None
         return products
+    
+    def get_product(self, id):
+        product = self.__session.query(Product).filter(Product.id == id).first()
+        if not product:
+            return None
+        return product
